@@ -1,7 +1,7 @@
 
 # Food Truck Finder API
 
-This is a Django-based API for finding food trucks in San Francisco.
+This is a Django-based API.
 
 ## Installation
 
