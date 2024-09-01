@@ -84,5 +84,24 @@ def nearby_food_trucks(request):
     # Sort by proximity and limit to 5 results
     nearest_trucks = sorted(trucks, key=lambda x: x.distance)[:5]
 
+    # Count the status of the top 5 nearest trucks
+    status_counts = {
+        'SUSPEND': 0,
+        'APPROVED': 0,
+        'REQUESTED': 0,
+        'EXPIRED': 0,
+        'ISSUED': 0
+    }
+
+    for truck in nearest_trucks:
+        if truck.status.upper() in status_counts:
+            status_counts[truck.status.upper()] += 1
+
+    # Serialize the data
     serializer = FoodTruckSerializer(nearest_trucks, many=True)
-    return JsonResponse(serializer.data, safe=False)
+
+    # Return the serialized data along with the status counts
+    return JsonResponse({
+        'status_counts': status_counts,
+        'nearest_trucks': serializer.data
+    }, safe=False)
