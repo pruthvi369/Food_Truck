@@ -12,12 +12,6 @@ This is a Django-based API.
 pip install -r requirements.txt
 ```
 
-3. Install `geopy` for calculating distances between coordinates:
-
-```bash
-pip install geopy
-```
-
 ## API Endpoints
 
 ### 1. Load CSV Data
