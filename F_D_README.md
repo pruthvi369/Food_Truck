@@ -47,7 +47,7 @@ This endpoint returns the 5 nearest food trucks based on the provided latitude a
 - `lon`: Longitude of the user's location.
 
 **Response:**  
-- `status_counts`: A count of food trucks with each status (`SUSPEND`, `APPROVED`, `REQUESTED`) among the nearest 5 food trucks.
+- `status_counts`: A count of food trucks with each status (`SUSPEND`, `APPROVED`, `REQUESTED`, `EXPIRED`, `ISSUED`) among the nearest 5 food trucks.
 - `nearest_trucks`: A JSON array of the 5 nearest food trucks, sorted by proximity.
 
 **Example JSON Response:**
